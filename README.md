@@ -1,1 +1,1 @@
-# gambling
+# app-gambling
