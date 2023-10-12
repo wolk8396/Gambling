@@ -209,7 +209,7 @@
               display: flex;
               justify-content: flex-start;
               align-items: center;
-              padding: .875rem 1.25rem;
+              padding: 1% 1.25rem;
               cursor: pointer;
 
               .contacts {
@@ -227,7 +227,7 @@
 
             .btn-menu {
               width: 100%;
-              padding: .875rem 1.25rem;
+              padding: 1% 1.25rem;
             }
           }
   
@@ -275,6 +275,10 @@
       right: 0;
       bottom: 0;
       left: 0;
+
+      // .container {
+      //   position: absolute;
+      // }
     }
     
   }

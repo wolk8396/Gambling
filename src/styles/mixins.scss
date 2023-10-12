@@ -12,6 +12,12 @@
 	font-weight: $weight;
 }
 
+@mixin fonts_gradient($font, $size, $weight) {
+	font-family: $font, sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+}
+
 @mixin UL() {
 	margin-left: 0;
 	padding-left: 0;
