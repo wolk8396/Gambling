@@ -5,8 +5,14 @@
 	align-items: $align;
 }
 
-@mixin fonts($font, $size, $color) {
+@mixin fonts($font, $size, $color, $weight) {
 	font-family: $font, sans-serif;
 	font-size: $size;
 	color: $color;
+	font-weight: $weight;
+}
+
+@mixin UL() {
+	margin-left: 0;
+	padding-left: 0;
 }

@@ -1,0 +1,307 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+@import '../../../styles/breakpoints.scss';
+
+.wrapper-header {
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 100;
+
+  .container {
+    position: fixed;
+    @include flex(row, flex-end, center);
+    width: 75.6%;
+    padding: 0 3rem;
+    max-width: 1640px;
+    border: 4px solid $menu;
+    border-radius: 64px;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 18;
+
+    &__burger {
+      display: none;
+      max-width: 2.25rem;
+      padding: .92rem 0;
+  
+      .burger_btn-line {
+        .menu {
+          transition: all ease 0.4s;
+  
+          &::after,
+          &::before {
+            transition-duration: 0.3s, 0.3s;
+            transition-delay: 0.3s, 0;
+          }
+  
+          &::after {
+            transition-property: bottom, transform;
+         
+          }
+  
+          &::before {
+            transition-property: top, transform;
+          }
+        }
+  
+        &.isActive {
+          padding: 20%;
+         
+          .menu {
+            background:none;
+          }
+          .menu::after,
+          .menu::before {
+            height: 1px;
+            transition-delay: 0.3s, 0;
+          }
+  
+          .menu::after {
+            top:0;
+            transform:rotate(-45deg);
+          }
+  
+          .menu::before {
+            bottom:0;
+            transform:rotate(45deg);
+          }
+        }
+      }
+  
+      .btn_burger {
+        display: block;
+        position: relative;
+        background-color: transparent;
+        min-width: 2.25rem;
+        min-height: 2.25rem;
+        padding: 10%;
+  
+        .menu {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 2px;
+          border-radius: 24px;
+          background-color: $text;
+          transition: all ease 0.4s;
+  
+          &::after,
+          &::before {
+            position: relative;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $text;
+            content: '';
+          }
+  
+          &::after {
+            top: 7px;
+          }
+  
+          &::before {
+            bottom: 9px;
+          }
+        }
+      }
+    }
+  
+    &__menu {
+      @include flex(row, space-between, center);
+      max-width: 66.63rem;
+      min-width: 53.4rem;
+      width: 70%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: 0;
+      z-index: 18;
+  
+      .navigation-menu {
+        width: 60%;
+        height: 100%;
+        padding: .92rem .5rem;
+  
+        .nav-contacts {
+          @include flex(row, space-between, center);
+          @include UL();
+          width: 100%;
+  
+          &__list {
+            list-style-type: none;
+
+            .contacts {
+              @include fonts('Lexend', 1rem, $text, 400);
+            }
+          }
+        }
+  
+        .container-btns {
+          display: none;
+        }
+      }
+  
+      .registration-menu {
+        width: 34%;
+        @include flex(row, space-between, center);
+        height: 100%;
+        padding: .92rem 0;
+  
+        .btn {
+          padding: 5% 5%;
+  
+          .logo-btn {
+            padding-left: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:$lg) {
+  .wrapper-header {
+    .container {
+      width: 97%;
+    }
+  }
+}
+
+@media (max-width:$tablet) {
+  .wrapper-header {
+    .container {
+      flex-direction: row-reverse;
+      padding: .313rem .875rem;
+
+      &__burger {
+        display: block;
+        padding: 0;
+      }
+  
+      &__menu {
+        width: 100%;
+        flex-direction: row-reverse;
+        min-width: unset;
+        margin-right: .25rem;
+  
+        .navigation-menu {
+          position: fixed;
+          display:none;
+          animation-duration: 1s;
+          animation-name: hide;
+          left: 50%;
+          transform: translate(-50%, 16%);
+          top:0;
+          width: 100%;
+          padding: 0.92rem 0;
+          
+          .nav-contacts {
+            flex-direction: column;
+            gap: .5rem;
+
+            &__list {
+              border: 2px solid #9DADF2;
+              border-radius: 24px;
+              width: 100%;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              padding: .875rem 1.25rem;
+              cursor: pointer;
+
+              .contacts {
+                font-size: 1.125rem;
+              }
+            }
+
+          }
+
+          .container-btns {
+            @include flex(column, space-between, center);
+            width: 100%;
+            padding-top: 1.875rem;
+            gap: 0.5rem;
+
+            .btn-menu {
+              width: 100%;
+              padding: .875rem 1.25rem;
+            }
+          }
+  
+          &.isActive {
+            position: fixed;
+            display: block;
+            width: 100%;
+            top: 100%;
+            opacity: 1;
+            animation-duration: 1s;
+            animation-name: show;
+            animation-direction: alternate;
+            z-index: 16;
+
+          }
+        }
+  
+        .registration-menu {
+          justify-content: flex-end;
+          padding: 0;
+        }
+  
+        .registration-menu > button {
+          &:nth-child(1) {
+            animation-delay: -0.45s;
+  
+            .logo-btn {
+              display: none;
+            }
+          }
+  
+          &:nth-child(3),
+          &:nth-child(2) {
+            display: none;
+          }
+        
+        }
+      }
+    }
+
+    &.isActive {
+      position: fixed;
+      background-color:$background;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+  }
+}
+
+@keyframes show {
+  from {
+    top:0;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes hide {
+  0% { 
+    display:block;
+    opacity: 1;
+    top:100%;
+
+  }
+ 
+  100% {
+    top: 70%;
+    opacity: 0;
+    display:none;
+  }
+}
+

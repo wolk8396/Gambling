@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.scss';
+import { HeaderComponent } from './app/components/header/header';
 
 const App = () => {
   return (
     <div className="wrapper">
-      <span className='wrapper__left'></span>
-      <span className='wrapper__right'></span>
+      <HeaderComponent/>
       <div className='wrapper__container'>
-
       </div>
     </div>
   );
