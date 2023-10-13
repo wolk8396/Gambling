@@ -8,10 +8,8 @@
 .house-gambling {
   @include flex(row, space-between, normal);
   position: relative;
-  // width: 96%;
   max-width: 1640px;
   min-height: 595px;
-  // margin-top: 237px;
   height: 40%;
   z-index: 5;
   min-height: 1030px;
@@ -84,7 +82,9 @@
         position: absolute;
         width: 89%;
         max-width: 467px;
-        top: 5%;
+        top: 0;
+        // top: 5%;
+        margin-top: 30px;
   
         .container-blog {
           height: 89%;
@@ -151,4 +151,65 @@
       }
     }
   }
+}
+
+@media (max-width:$lg) {
+  .house-gambling  {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+
+    .Banner-BG{
+      transform: rotate(90deg);
+      transform-origin: 338px;
+      height: 100%;
+      top: 3%;
+      // left: 0;
+      // transform: unset;
+  
+    }
+
+    .wrapper-house-gambling {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 8%;
+
+      &__banner {
+        margin-bottom: 59%;
+        margin-top: 10%;
+        padding: 0;
+        align-items: center;
+        min-width: 300px;
+    
+
+        .title {
+          text-align: center;
+          font-size: 2.875rem;
+          margin-bottom: 0.5rem;
+
+        }
+
+        .overview {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+
+        .btn-overview {
+          font-size: 1.25rem;
+          padding: 1rem 1.3rem;
+        }
+      }
+
+      &__blog-container {
+        padding: 39rem 23.5rem 0 1rem;
+        min-width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width:$tablet) {
+
 }
