@@ -37,17 +37,17 @@ const nav_footer:NavModule[]  = [
   {
     id:1,
     url:'#',
-    name:'Cookies'
+    name:"Terms & Conditions"
   },
   {
     id:2,
     url:'#',
-    name:'Contacts'
+    name:'Cookies'
   },
   {
     id:3,
     url:'#',
-    name:'Careers'
+    name:'Contacts'
   },
   {
     id:4,
@@ -56,6 +56,11 @@ const nav_footer:NavModule[]  = [
   },
   {
     id:5,
+    url:'#',
+    name:'Careers'
+  },
+  {
+    id:6,
     url:'#',
     name:'Brand Guide'
   },

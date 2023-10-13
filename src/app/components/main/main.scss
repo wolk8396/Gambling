@@ -7,117 +7,147 @@
 
 .house-gambling {
   @include flex(row, space-between, normal);
-  width: 96%;
+  position: relative;
+  // width: 96%;
   max-width: 1640px;
   min-height: 595px;
-  margin: 0 auto;
-  margin-top: 237px;
+  // margin-top: 237px;
+  height: 40%;
+  z-index: 5;
+  min-height: 1030px;
 
-  &__banner {
-    @include flex(column, space-between, flex-start);
-    padding: 79px 0 61px;
-    width: 40.9%;
+  .Banner-BG {
+    position: absolute;
+    @include flex(row, space-between, center);
+    width: 338px;
+    height: 112%;
+    // border: 1px solid red;
+    top: 0%;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
-    .title {
-      @include fonts_gradient('Lexend', 6rem, 500);
-      background: linear-gradient(180deg, $text 40%, $menu 60%);
-      background-clip: content-box;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    
-    .overview {
-      @include fonts('Lexend', 2rem, $text, 500);
-      opacity: 0.6;
-    }
-
-    .btn-overview {
-      @include fonts('Lexend', 1.5rem, $text, 600);
-      padding: 4.3% 20.7%;
-      border-radius: 48px;
-      text-transform: uppercase;
+    .wrapperBanner {
+      width: 29.8%;
+      height: 100%;
+      // border: 1px solid wheat;
     }
   }
 
-  &__blog-container {
-    grid-area: 1 / 3 / 2 / 4;
-    border-radius: 100px;
-    border: 3px solid $menu;
-    padding: 1rem .5rem 0 1rem;
+  .wrapper-house-gambling {
     position: relative;
-    overflow: hidden;
-    width: 32.5%;
-    min-width: 515px;
-    background: rgba(255, 255, 255, 0.12);
+    z-index: 5;
+    @include flex(row, space-between, normal);
+    height: 40%;
+    min-height: 595px;
+    margin-top: 9%;
 
-    .wrapper-scroll {
-      height: 100%;
-      position: absolute;
-      width: 89%;
-      max-width: 467px;
-      top: 5%;
-
-      .container-blog {
-        height: 89%;
-       
-        &__about {
-          @include flex(column, space-between, flex-start);
-          border-radius: 193px;
-          background-color: #1E1231;
-          margin-bottom: 1rem;
-          padding: 2% 13%;
-
-          .descriptions{
-            @include fonts('Lexend', 1.5rem, $text, 400);
-          }
-
-          .data {
-            @include fonts_gradient('Lexend', .875rem, 500);
-            color: $text;
-            opacity: 0.3;
-            padding: 0.46rem 0;
-          }
-        }
+    &__banner {
+      @include flex(column, space-between, flex-start);
+      padding: 79px 0 61px;
+      width: 40.9%;
+  
+      .title {
+        @include fonts_gradient('Lexend', 6rem, 500);
+        background: linear-gradient(180deg, $text 40%, $menu 60%);
+        background-clip: content-box;
+        -webkit-background-clip: text;
+        color: transparent;
       }
-
-      .container-blog > div {
-        &:nth-child(1) {
-          background-color: $menu;
-        }
+      
+      .overview {
+        @include fonts('Lexend', 2rem, $text, 500);
+        opacity: 0.6;
+      }
+  
+      .btn-overview {
+        @include fonts('Lexend', 1.5rem, $text, 600);
+        padding: 4.3% 20.7%;
+        border-radius: 48px;
+        text-transform: uppercase;
       }
     }
-
-    .slidecontainer {
-      position: absolute;
-      right: 3%;
-      top: 82%;
-      transform: rotate(90deg);
-      transform-origin: 400px 8px;
-
-      .slider {
-        -webkit-appearance: none;
-        width: 406px;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.12);
-        outline: none;
-        border-radius: 10px;
+  
+    &__blog-container {
+      grid-area: 1 / 3 / 2 / 4;
+      border-radius: 100px;
+      border: 3px solid $menu;
+      padding: 1rem .5rem 0 1rem;
+      position: relative;
+      overflow: hidden;
+      width: 32.5%;
+      min-width: 515px;
+      background: rgba(255, 255, 255, 0.12);
+  
+      .wrapper-scroll {
+        height: 100%;
+        position: absolute;
+        width: 89%;
+        max-width: 467px;
+        top: 5%;
+  
+        .container-blog {
+          height: 89%;
+         
+          &__about {
+            @include flex(column, space-between, flex-start);
+            border-radius: 193px;
+            background-color: #1E1231;
+            margin-bottom: 1rem;
+            padding: 2% 13%;
+  
+            .descriptions{
+              @include fonts('Lexend', 1.5rem, $text, 400);
+            }
+  
+            .data {
+              @include fonts_gradient('Lexend', .875rem, 500);
+              color: $text;
+              opacity: 0.3;
+              padding: 0.46rem 0;
+            }
+          }
+        }
+  
+        .container-blog > div {
+          &:nth-child(1) {
+            background-color: $menu;
+          }
+        }
       }
-      
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 104px;
-        height: 8px;
-        background: $menu;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-      
-      .slider::-moz-range-thumb {
-        width: 104px;
-        height: 8px;
-        background: $menu;
-        cursor: pointer;
+  
+      .slidecontainer {
+        position: absolute;
+        right: 3%;
+        top: 82%;
+        transform: rotate(90deg);
+        transform-origin: 400px 8px;
+  
+        .slider {
+          -webkit-appearance: none;
+          width: 406px;
+          height: 8px;
+          background: rgba(255, 255, 255, 0.12);
+          outline: none;
+          border-radius: 10px;
+        }
+        
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 104px;
+          height: 8px;
+          background: $menu;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+          width: 104px;
+          height: 8px;
+          background: $menu;
+          cursor: pointer;
+        }
       }
     }
   }

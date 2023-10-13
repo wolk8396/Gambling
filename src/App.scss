@@ -2,23 +2,16 @@
 @import '../src/styles/mixins.scss';
 
 .wrapper {
+  @include flex(column, flex-end, center);
+  position: relative;
   width: 100%;
   height: 100%;
-  // max-width: 1920px;
   min-height: 1265px;
   background: no-repeat url('../src/assets/images/Main_Page.png');
   background-size: cover;
-  
-
-
-  &__container {
-    @include flex(column, space-between, center);
-    max-width: 1920px;
-    min-height: 1265px;
-    width: 100%;
-    height: 100%;
-  }
 }
+
+
 
 
 

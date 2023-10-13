@@ -8,15 +8,15 @@ interface LinksProps {
 	classNameLi: string;
 	classNameLink: string;
 	title?: string;
+
 }
 
 const Navigation: React.FC<LinksProps> = (props) => {
 	const { data, classNameUl, classNameLi, classNameLink, title } = props;
 	return (
-		<ul className={classNameUl}>
+		<ul className={classNameUl}>{title}
 			{data.map(({ url, name, id }) => (
 				<li key={id} className={classNameLi}>
-					{title}
 					<a className={classNameLink} href={url}>
 						{name}
 					</a>

@@ -1,7 +1,15 @@
 interface NavModule {
   id:number,
   url:string,
-  name:string
+  name?:string,
+  image?:string 
 }
 
-export type {NavModule}
+interface LogoNavModule {
+  id:number,
+  image: string,
+  name?:string
+  url:string
+}
+
+export type {NavModule, LogoNavModule}
