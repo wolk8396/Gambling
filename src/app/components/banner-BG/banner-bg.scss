@@ -1,0 +1,25 @@
+.wrapperBanner {
+  position: relative;
+  overflow: hidden;
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 59px;
+    animation: scrollY 20s linear infinite;
+    margin-bottom: 20px;
+
+    &.reverse {
+      animation-direction: reverse;
+    }
+  }
+}
+
+@keyframes scrollY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - 20px));
+  }
+}

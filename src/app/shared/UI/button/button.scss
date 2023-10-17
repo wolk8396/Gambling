@@ -1,0 +1,26 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/fonts.scss';
+
+.btn-overview,
+.btn-menu,
+.btn {
+  display: flex;
+  align-items: center;
+  @include fonts('Lexend', 1rem, $text, 300);
+  border: 2px solid #9DADF2;
+  border-radius: 24px;
+}
+
+.black {
+  background-color: $background;
+}
+
+.blue {
+  background-color: $menu;
+  border: none;
+};
+
+
+
+
